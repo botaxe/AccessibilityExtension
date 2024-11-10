@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Extension for Dummies",
+  "description": "Summarizes each paragraph and displays a block of text next to it.",
+  "version": "1.0",
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "summary-popup.js",
+        "content.js",
+        "chatbox.js"
+      ],
+      "css": [
+        "chatbox.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "summary-popup.css",
+        "chatbox.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "Dummy.jfif"
+  }
+}
