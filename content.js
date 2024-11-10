@@ -130,7 +130,4 @@ function addHoverEffect() {
 function summarizeText(text) {
     console.log(text);
 }
-
-
-
 addHoverEffect();
